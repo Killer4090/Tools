@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Percentage Difference Calculator</title>
+</head>
+<body>
+    <h1>Percentage Difference Calculator</h1>
+    <form>
+        <label for="originalValue">Original Value:</label>
+        <input type="number" id="originalValue" name="originalValue"><br><br>
+
+        <label for="newValue">New Value:</label>
+        <input type="number" id="newValue" name="newValue"><br><br>
+
+        <button type="button" onclick="calculatePercentageDifference()">Calculate</button><br><br>
+
+        <label for="result">Percentage Difference:</label>
+        <input type="text" id="result" name="result" readonly>
+    </form>
+
+    <script>
+        function calculatePercentageDifference() {
+            var originalValue = parseFloat(document.getElementById("originalValue").value);
+            var newValue = parseFloat(document.getElementById("newValue").value);
+
+            var percentageDifference = ((newValue - originalValue) / originalValue) * 100;
+
+            document.getElementById("result").value = percentageDifference.toFixed(2) + "%";
+        }
+    </script>
+</body>
+</html>
