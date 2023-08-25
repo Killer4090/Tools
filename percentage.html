@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Percentage Calculator</title>
+</head>
+<body>
+    <h1>Percentage Calculator</h1>
+    <form>
+        <label for="total">Total:</label>
+        <input type="number" id="total" name="total"><br><br>
+
+        <label for="percentage">Percentage:</label>
+        <input type="number" id="percentage" name="percentage"><br><br>
+
+        <button type="button" onclick="calculatePercentage()">Calculate</button><br><br>
+
+        <label for="result">Result:</label>
+        <input type="text" id="result" name="result" readonly>
+    </form>
+
+    <script>
+        function calculatePercentage() {
+            var total = parseFloat(document.getElementById("total").value);
+            var percentage = parseFloat(document.getElementById("percentage").value);
+
+            var result = (percentage / 100) * total;
+
+            document.getElementById("result").value = result.toFixed(2);
+        }
+    </script>
+</body>
+</html>
